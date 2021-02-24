@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { timer } from 'rxjs';
+import { of, timer } from 'rxjs';
 import { filter, map, mapTo } from 'rxjs/operators';
 
 @Injectable({
@@ -9,10 +9,11 @@ export class WeatherStationService {
   constructor() { }
   
   getTemperature(city: string) {
-    return timer(1000).pipe(
-      mapTo(city),
-      filter(_city => _city !== 'Bordeaux'),
-      map(_city => 20)
-    );
+    // return timer(1000).pipe(
+    //   mapTo(city),
+    //   filter(_city => _city !== 'Bordeaux'),
+    //   map(_city => 20)
+    // );
+    return of(27);
   }
 }

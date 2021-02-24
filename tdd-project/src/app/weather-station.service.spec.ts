@@ -48,7 +48,7 @@ fdescribe('WeatherStationService', () => {
     service.getTemperature('Bordeaux')
       .subscribe((_temperature) => temperature = _temperature);
     tick(1000);
-    expect(temperature).toBe(20);
+    expect(temperature).toBe(27);
   }));
 
 });

@@ -51,4 +51,12 @@ fdescribe('WeatherStationService', () => {
     expect(temperature).toBe(27);
   }));
 
+  it('should temperature in Bordeaux is 27 degres celcius, testC', fakeAsync(() => {
+    const weatherStation = TestBed.get(WeatherStationService);
+    let temperature;
+    weatherStation.getTemperature('Bordeaux')
+      .subscribe((_temperature) => temperature = _temperature);
+    expect(temperature).toBe(27);
+  }));
+
 });
